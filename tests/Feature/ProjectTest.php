@@ -31,29 +31,45 @@ class ProjectTest extends TestCase {
         $this->get('/projects', $projectData)->assertSee($projectData['title']);
     }
 
-     /** @test */
-         public function a_project_must_have_a_title()
-         {
-             //Given
-            $attributes=factory('App\Project')->make(['title'=>'']);
+    /** @test */
+    public function a_project_must_have_a_title()
+    {
+        //Given
+        $attributes = factory('App\Project')->make(['title' => '']);
 
-             //when
-             $response = $this->post('/projects',$attributes->toArray());
+        //when
+        $response = $this->post('/projects', $attributes->toArray());
 
-             //Then
-             $response->assertSessionHasErrors('title');
-         }
+        //Then
+        $response->assertSessionHasErrors('title');
+    }
 
     /** @test */
     public function a_project_must_have_a_description()
     {
         //Given
-        $attributes=factory('App\Project')->make(['description'=>'']);
+        $attributes = factory('App\Project')->make(['description' => '']);
 
         //when
-        $response = $this->post('/projects',$attributes->toArray());
+        $response = $this->post('/projects', $attributes->toArray());
 
         //Then
         $response->assertSessionHasErrors('description');
+    }
+
+    /** @test */
+    public function a_user_can_view_a_project()
+    {
+        $this->withoutExceptionHandling();
+
+        //Given
+        $project = factory('App\Project')->create();
+
+        //When
+        $response = $this->get('/projects/' . $project->id);
+
+        //Then
+        $response->assertSee($project->title);
+        $response->assertSee($project->description);
     }
 }
