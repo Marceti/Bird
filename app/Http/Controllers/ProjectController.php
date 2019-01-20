@@ -25,6 +25,7 @@ class ProjectController extends Controller
         //persist
         Project::create(request()->only(['title','description']));
 
-        //TODO:redirect
+        //redirect
+        return redirect()->route('projects');
     }
 }
