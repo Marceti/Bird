@@ -32,7 +32,7 @@ class ProjectController extends Controller {
 
     public function show(Project $project)
     {
-        //Todo:Pune path la proiect : $project->path() , minutul 3:30
+
         return view('projects.show',compact('project'));
     }
 }

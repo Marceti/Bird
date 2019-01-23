@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProjectTest extends TestCase {
+class ProjectsTest extends TestCase {
 
     use WithFaker, RefreshDatabase;
 
@@ -66,7 +66,7 @@ class ProjectTest extends TestCase {
         $project = factory('App\Project')->create();
 
         //When
-        $response = $this->get('/projects/' . $project->id);
+        $response = $this->get($project->path());
 
         //Then
         $response->assertSee($project->title);

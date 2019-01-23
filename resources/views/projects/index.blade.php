@@ -1,11 +1,17 @@
 @extends('layouts.master')
 
 @section('content')
+    <ul class="list-unstyled">
+        @forelse($projects as $project)
 
-    @foreach($projects as $project)
-        @include('projects.partials._projectIndexCard')
-    @endforeach
+            @include('projects.partials._projectIndexCard')
 
+        @empty
+
+            <li> No projects yet.</li>
+
+        @endforelse
+    </ul>
 
 
 @endsection
