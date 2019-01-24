@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller {
 
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index','show']);
+    }
+
+
     public function index()
     {
         $projects = Project::all();
@@ -18,13 +25,13 @@ class ProjectController extends Controller {
     public function store()
     {
         //validate
-        request()->validate([
+        $attributes=request()->validate([
             'title'=>'required',
             'description'=>'required'
         ]);
 
         //persist
-        Project::create(request()->only(['title', 'description']));
+        auth()->user()->projects()->create($attributes);
 
         //redirect
         return redirect()->route('projects');

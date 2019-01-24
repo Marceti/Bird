@@ -10,16 +10,17 @@ class ProjectsTest extends TestCase {
 
     use WithFaker, RefreshDatabase;
 
-
     /** @test */
-    public function a_user_can_create_a_project()
+    public function only_authenticating_user_can_create_a_project()
     {
         $this->withoutExceptionHandling();
 
         //Given
+        $this->actingAs(factory('App\User')->create());
+
         $projectData = [
             'title'       => $this->faker->sentence,
-            'description' => $this->faker->paragraph
+            'description' => $this->faker->paragraph,
         ];
 
         //When
@@ -31,11 +32,14 @@ class ProjectsTest extends TestCase {
         $this->get('/projects', $projectData)->assertSee($projectData['title']);
     }
 
+
     /** @test */
     public function a_project_must_have_a_title()
     {
         //Given
         $attributes = factory('App\Project')->make(['title' => '']);
+
+        $this->actingAs(factory('App\User')->create());
 
         //when
         $response = $this->post('/projects', $attributes->toArray());
@@ -50,11 +54,26 @@ class ProjectsTest extends TestCase {
         //Given
         $attributes = factory('App\Project')->make(['description' => '']);
 
+        $this->actingAs(factory('App\User')->create());
+
         //when
         $response = $this->post('/projects', $attributes->toArray());
 
         //Then
         $response->assertSessionHasErrors('description');
+    }
+
+    /** @test */
+    public function a_project_must_have_an_owner()
+    {
+        //Given
+        $attributes = factory('App\Project')->raw();
+
+        //when
+        $response = $this->post('/projects', $attributes);
+
+        //Then
+        $response->assertRedirect('login');
     }
 
     /** @test */
