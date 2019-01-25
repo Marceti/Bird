@@ -20,7 +20,6 @@
             <button type="submit" class="p-2 mx-2 btn btn-primary">Create Post</button>
         </div>
 
-
     </form>
 
 

@@ -13,5 +13,5 @@
         @endforelse
     </ul>
 
-
+    <a href="/projects/create" class="badge badge-light font-weight-normal py-3 shadow-sm ">Create Project</a>
 @endsection
