@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/projects/create','ProjectController@create');
 Route::get('/projects','ProjectController@index')->name('projects');
 Route::post('/projects','ProjectController@store');
 Route::get('/projects/{project}','ProjectController@show');
+
+
 
 
 Auth::routes();

@@ -10,13 +10,13 @@ class ProjectController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index','show']);
+        $this->middleware('auth');
     }
 
 
     public function index()
     {
-        $projects = Project::all();
+        $projects = auth()->user()->projects;
 
         return view('projects.index', compact('projects'));
     }
@@ -39,7 +39,14 @@ class ProjectController extends Controller {
 
     public function show(Project $project)
     {
-
+        if (auth()->user()->isNot($project->owner)){
+            abort(403);
+        }
         return view('projects.show',compact('project'));
+    }
+
+    public function create()
+    {
+return view('projects.create');
     }
 }
