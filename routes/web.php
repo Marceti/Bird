@@ -26,3 +26,6 @@ Route::get('/projects/{project}','ProjectController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//TODO: Am instalat talewind, am inceput sa modific stilurile, am ajuns la episodul 9 min :3 , la shadows, am de configurat cardul, sa pun umbra , culoare ... sia apoi sa le aranjam mai bine in pagina , acum containerul este flex (de taleWind) dar mai vedem

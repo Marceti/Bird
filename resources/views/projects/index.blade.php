@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <div class="d-flex flex-row" >
+    <div class="flex align-items-center mb-4" >
         <h1 class="mr-auto"> My Projects</h1>
         <p class="ml-auto"><a href="/projects/create" class="badge badge-light font-weight-normal py-2 shadow-sm my-2">Create Project</a></p>
     </div>
 
 
-    <div class="d-flex">
+    <div class="flex">
 
         @forelse($projects as $project)
 
