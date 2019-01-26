@@ -1,17 +1,25 @@
 @extends('layouts.master')
 
 @section('content')
-    <ul class="list-unstyled">
+
+    <div class="d-flex flex-row" >
+        <h1 class="mr-auto"> My Projects</h1>
+        <p class="ml-auto"><a href="/projects/create" class="badge badge-light font-weight-normal py-2 shadow-sm my-2">Create Project</a></p>
+    </div>
+
+
+    <div class="d-flex">
+
         @forelse($projects as $project)
 
             @include('projects.partials._projectIndexCard')
 
         @empty
 
-            <li> No projects yet.</li>
+            <div> No projects yet.</div>
 
         @endforelse
-    </ul>
+    </div>
 
-    <a href="/projects/create" class="badge badge-light font-weight-normal py-3 shadow-sm ">Create Project</a>
+
 @endsection

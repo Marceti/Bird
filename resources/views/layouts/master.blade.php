@@ -24,7 +24,8 @@
 <body style="font-family: 'Mandali'; font-size: 100%">
 <div id="app">
     @include('layouts.partials._navbar')
-    <main class="py-4 mx-auto" style="max-width: 800px" >
+
+    <main class="p-4 mx-auto" >
         @yield('content')
     </main>
 </div>
