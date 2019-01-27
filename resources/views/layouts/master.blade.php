@@ -21,11 +21,11 @@
 </head>
 
 
-<body style="font-family: 'Mandali'; font-size: 100%">
+<body class="bg-grey-lighter" style="font-family: 'Mandali'; font-size: 100%">
 <div id="app">
     @include('layouts.partials._navbar')
 
-    <main class="p-4 mx-auto" >
+    <main class="p-4 mx-auto bg-grey-lighter" >
         @yield('content')
     </main>
 </div>
