@@ -43,7 +43,14 @@
  * If using `postcss-import`, use this import instead:
  *
  * @import "tailwindcss/utilities";
+
  */
+
+.button-1{
+    @apply .bg-blue-light .text-white-b .no-underline .rounded-lg .shadow-button .text-base py-2 px-5;
+
+}
+
 @tailwind utilities;
 
 /**

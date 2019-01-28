@@ -2,13 +2,15 @@
 
 @section('content')
 
-    <div class="flex align-items-center mb-4 mx-2" >
-        <h1 class="mr-auto"> My Projects</h1>
-        <p class="ml-auto"><a href="/projects/create" class="badge badge-light font-weight-normal py-2 shadow-sm my-2">Create Project</a></p>
-    </div>
+    <header class="flex items-center mb-4 mx-2" >
+        <div class="flex justify-between  items-center w-full">
+            <h2 class=" text-grey text-base font-medium"> My Projects</h2>
+            <a href="/projects/create" class="button-1">Create Project</a>
+        </div>
+    </header>
 
 
-    <div class="flex flex-wrap">
+    <main class="flex flex-wrap">
 
         @forelse($projects as $project)
 
@@ -19,7 +21,7 @@
             <div> No projects yet.</div>
 
         @endforelse
-    </div>
+    </main>
 
 
 @endsection

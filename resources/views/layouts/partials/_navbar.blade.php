@@ -2,8 +2,8 @@
     <div class="container-fluid mx-auto">
         <div class="flex justify-between items-center py-2">
             <!-- Left Side Of Navbar -->
-            <a class="navbar-brand " style="font-size: 120%" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+            <a  href="{{ url('/') }}">
+                <img src="{{asset('images/logo.svg')}}" alt="Birdboard" class="h-12">
             </a>
 
             <!-- Right Side Of Navbar -->
