@@ -130,6 +130,7 @@ let colors = {
 
 
     'white-b': '#ffffff',
+    'verzui': '#A5CE39',
 }
 
 module.exports = {

@@ -11069,7 +11069,7 @@ table {
 
  */
 
-.button-1 {
+.bird-button {
   background-color: #6cb2eb;
   color: #fff;
   text-decoration: none;
@@ -11080,6 +11080,29 @@ table {
   padding-bottom: .5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.bird-card {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  background-color: #fff;
+  align-items: stretch;
+  border-radius: .5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .12), 0 2px 4px 0 rgba(0, 0, 0, .08);
+}
+
+.bird-card-header {
+  margin-bottom: .75rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  margin-left: -0.5rem;
+  padding-left: .5rem;
+  border-left-width: 4px;
+  border-color: #a5ce39;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .list-reset {
@@ -11401,6 +11424,10 @@ table {
   background-color: #fff;
 }
 
+.bg-verzui {
+  background-color: #a5ce39;
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -11697,6 +11724,10 @@ table {
   background-color: #fff;
 }
 
+.hover\:bg-verzui:hover {
+  background-color: #a5ce39;
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -11991,6 +12022,10 @@ table {
 
 .focus\:bg-white-b:focus {
   background-color: #fff;
+}
+
+.focus\:bg-verzui:focus {
+  background-color: #a5ce39;
 }
 
 .bg-bottom {
@@ -12361,6 +12396,10 @@ table {
   border-color: #fff;
 }
 
+.border-verzui {
+  border-color: #a5ce39;
+}
+
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
@@ -12657,6 +12696,10 @@ table {
   border-color: #fff;
 }
 
+.hover\:border-verzui:hover {
+  border-color: #a5ce39;
+}
+
 .focus\:border-transparent:focus {
   border-color: transparent;
 }
@@ -12951,6 +12994,10 @@ table {
 
 .focus\:border-white-b:focus {
   border-color: #fff;
+}
+
+.focus\:border-verzui:focus {
+  border-color: #a5ce39;
 }
 
 .rounded-none {
@@ -15724,6 +15771,10 @@ table {
   color: #fff;
 }
 
+.text-verzui {
+  color: #a5ce39;
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -16020,6 +16071,10 @@ table {
   color: #fff;
 }
 
+.hover\:text-verzui:hover {
+  color: #a5ce39;
+}
+
 .focus\:text-transparent:focus {
   color: transparent;
 }
@@ -16314,6 +16369,10 @@ table {
 
 .focus\:text-white-b:focus {
   color: #fff;
+}
+
+.focus\:text-verzui:focus {
+  color: #a5ce39;
 }
 
 .text-xs {
@@ -17061,6 +17120,10 @@ table {
     background-color: #fff;
   }
 
+  .sm\:bg-verzui {
+    background-color: #a5ce39;
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -17357,6 +17420,10 @@ table {
     background-color: #fff;
   }
 
+  .sm\:hover\:bg-verzui:hover {
+    background-color: #a5ce39;
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -17651,6 +17718,10 @@ table {
 
   .sm\:focus\:bg-white-b:focus {
     background-color: #fff;
+  }
+
+  .sm\:focus\:bg-verzui:focus {
+    background-color: #a5ce39;
   }
 
   .sm\:bg-bottom {
@@ -18013,6 +18084,10 @@ table {
     border-color: #fff;
   }
 
+  .sm\:border-verzui {
+    border-color: #a5ce39;
+  }
+
   .sm\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -18309,6 +18384,10 @@ table {
     border-color: #fff;
   }
 
+  .sm\:hover\:border-verzui:hover {
+    border-color: #a5ce39;
+  }
+
   .sm\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -18603,6 +18682,10 @@ table {
 
   .sm\:focus\:border-white-b:focus {
     border-color: #fff;
+  }
+
+  .sm\:focus\:border-verzui:focus {
+    border-color: #a5ce39;
   }
 
   .sm\:rounded-none {
@@ -21360,6 +21443,10 @@ table {
     color: #fff;
   }
 
+  .sm\:text-verzui {
+    color: #a5ce39;
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -21656,6 +21743,10 @@ table {
     color: #fff;
   }
 
+  .sm\:hover\:text-verzui:hover {
+    color: #a5ce39;
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -21950,6 +22041,10 @@ table {
 
   .sm\:focus\:text-white-b:focus {
     color: #fff;
+  }
+
+  .sm\:focus\:text-verzui:focus {
+    color: #a5ce39;
   }
 
   .sm\:text-xs {
@@ -22683,6 +22778,10 @@ table {
     background-color: #fff;
   }
 
+  .md\:bg-verzui {
+    background-color: #a5ce39;
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -22979,6 +23078,10 @@ table {
     background-color: #fff;
   }
 
+  .md\:hover\:bg-verzui:hover {
+    background-color: #a5ce39;
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -23273,6 +23376,10 @@ table {
 
   .md\:focus\:bg-white-b:focus {
     background-color: #fff;
+  }
+
+  .md\:focus\:bg-verzui:focus {
+    background-color: #a5ce39;
   }
 
   .md\:bg-bottom {
@@ -23635,6 +23742,10 @@ table {
     border-color: #fff;
   }
 
+  .md\:border-verzui {
+    border-color: #a5ce39;
+  }
+
   .md\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -23931,6 +24042,10 @@ table {
     border-color: #fff;
   }
 
+  .md\:hover\:border-verzui:hover {
+    border-color: #a5ce39;
+  }
+
   .md\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -24225,6 +24340,10 @@ table {
 
   .md\:focus\:border-white-b:focus {
     border-color: #fff;
+  }
+
+  .md\:focus\:border-verzui:focus {
+    border-color: #a5ce39;
   }
 
   .md\:rounded-none {
@@ -26982,6 +27101,10 @@ table {
     color: #fff;
   }
 
+  .md\:text-verzui {
+    color: #a5ce39;
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -27278,6 +27401,10 @@ table {
     color: #fff;
   }
 
+  .md\:hover\:text-verzui:hover {
+    color: #a5ce39;
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -27572,6 +27699,10 @@ table {
 
   .md\:focus\:text-white-b:focus {
     color: #fff;
+  }
+
+  .md\:focus\:text-verzui:focus {
+    color: #a5ce39;
   }
 
   .md\:text-xs {
@@ -28305,6 +28436,10 @@ table {
     background-color: #fff;
   }
 
+  .lg\:bg-verzui {
+    background-color: #a5ce39;
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -28601,6 +28736,10 @@ table {
     background-color: #fff;
   }
 
+  .lg\:hover\:bg-verzui:hover {
+    background-color: #a5ce39;
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -28895,6 +29034,10 @@ table {
 
   .lg\:focus\:bg-white-b:focus {
     background-color: #fff;
+  }
+
+  .lg\:focus\:bg-verzui:focus {
+    background-color: #a5ce39;
   }
 
   .lg\:bg-bottom {
@@ -29257,6 +29400,10 @@ table {
     border-color: #fff;
   }
 
+  .lg\:border-verzui {
+    border-color: #a5ce39;
+  }
+
   .lg\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -29553,6 +29700,10 @@ table {
     border-color: #fff;
   }
 
+  .lg\:hover\:border-verzui:hover {
+    border-color: #a5ce39;
+  }
+
   .lg\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -29847,6 +29998,10 @@ table {
 
   .lg\:focus\:border-white-b:focus {
     border-color: #fff;
+  }
+
+  .lg\:focus\:border-verzui:focus {
+    border-color: #a5ce39;
   }
 
   .lg\:rounded-none {
@@ -32604,6 +32759,10 @@ table {
     color: #fff;
   }
 
+  .lg\:text-verzui {
+    color: #a5ce39;
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -32900,6 +33059,10 @@ table {
     color: #fff;
   }
 
+  .lg\:hover\:text-verzui:hover {
+    color: #a5ce39;
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -33194,6 +33357,10 @@ table {
 
   .lg\:focus\:text-white-b:focus {
     color: #fff;
+  }
+
+  .lg\:focus\:text-verzui:focus {
+    color: #a5ce39;
   }
 
   .lg\:text-xs {
@@ -33927,6 +34094,10 @@ table {
     background-color: #fff;
   }
 
+  .xl\:bg-verzui {
+    background-color: #a5ce39;
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -34223,6 +34394,10 @@ table {
     background-color: #fff;
   }
 
+  .xl\:hover\:bg-verzui:hover {
+    background-color: #a5ce39;
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -34517,6 +34692,10 @@ table {
 
   .xl\:focus\:bg-white-b:focus {
     background-color: #fff;
+  }
+
+  .xl\:focus\:bg-verzui:focus {
+    background-color: #a5ce39;
   }
 
   .xl\:bg-bottom {
@@ -34879,6 +35058,10 @@ table {
     border-color: #fff;
   }
 
+  .xl\:border-verzui {
+    border-color: #a5ce39;
+  }
+
   .xl\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -35175,6 +35358,10 @@ table {
     border-color: #fff;
   }
 
+  .xl\:hover\:border-verzui:hover {
+    border-color: #a5ce39;
+  }
+
   .xl\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -35469,6 +35656,10 @@ table {
 
   .xl\:focus\:border-white-b:focus {
     border-color: #fff;
+  }
+
+  .xl\:focus\:border-verzui:focus {
+    border-color: #a5ce39;
   }
 
   .xl\:rounded-none {
@@ -38226,6 +38417,10 @@ table {
     color: #fff;
   }
 
+  .xl\:text-verzui {
+    color: #a5ce39;
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -38522,6 +38717,10 @@ table {
     color: #fff;
   }
 
+  .xl\:hover\:text-verzui:hover {
+    color: #a5ce39;
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -38816,6 +39015,10 @@ table {
 
   .xl\:focus\:text-white-b:focus {
     color: #fff;
+  }
+
+  .xl\:focus\:text-verzui:focus {
+    color: #a5ce39;
   }
 
   .xl\:text-xs {

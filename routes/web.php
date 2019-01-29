@@ -28,4 +28,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//TODO: Formatarea cardurilor de la [Projects>index] si Partial [_projectIndexCard] - episode 10 min:12:40 - am de pus linia colorata de la titlul cardului
+//TODO: Formatarea cardurilor e gata , Am, de facut [projects.show] - episode 11 min:2:00 , repeta talewind:settings (pot scimba culori) :add components (ex bird-card, bird-button) - astea le-am facut eu

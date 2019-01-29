@@ -46,10 +46,21 @@
 
  */
 
-.button-1{
+.bird-button{
     @apply .bg-blue-light .text-white-b .no-underline .rounded-lg .shadow-button .text-base py-2 px-5;
+}
+
+.bird-card {
+    @apply .py-2 .px-2 .bg-white-b .items-stretch .rounded-lg .shadow-button;
 
 }
+
+.bird-card-header {
+    @apply .mb-3 .py-3 .-ml-2 .pl-2 .border-l-4 .border-verzui .text-xl .font-semibold;
+}
+
+
+
 
 @tailwind utilities;
 
