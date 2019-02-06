@@ -34,5 +34,17 @@ class ProjectTest extends TestCase {
         $this->assertEquals($project->owner->id,$user->id);
     }
 
+ /** @test */
+     public function it_can_add_a_task()
+     {
+     //Given
+       $project = factory('App\Project')->create();
 
+       //When
+       $project->addTask('Test Task 1');
+       
+       //Then
+       $this->assertCount(1,$project->tasks);
+       $this->assertEquals('Test Task 1',$project->tasks->first()->body);
+     }
 }

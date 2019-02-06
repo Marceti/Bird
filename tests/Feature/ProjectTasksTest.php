@@ -25,4 +25,24 @@ class ProjectTasksTest extends TestCase
              $response = $this->get($project->path());
              $response->assertSee('Lorem ipsum !!!');
          }
+         
+          /** @test */
+              public function a_task_must_have_a_body()
+              {
+              //Given
+                $this->signIn();
+                $project=factory('App\Project')->create(['owner_id'=>auth()->id()]);
+                $attributes=factory('App\Task')->raw(['body'=>'']);
+                //When
+
+                  $response=$this->post($project->path().'/tasks',$attributes);
+                
+                //Then
+
+                  $response->assertSessionHasErrors('body');
+                
+              }
+         
+         
+         
 }

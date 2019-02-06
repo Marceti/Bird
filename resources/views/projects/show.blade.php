@@ -2,10 +2,11 @@
 
 @section('content')
 
-    <header class="flex items-center mb-4 mx-1" >
+    <header class="flex items-center mb-4 mx-1">
         <div class="flex justify-between  items-end w-full">
             <h2 class="text-grey text-base font-medium">
-                <a href="/projects" class="no-underline text-grey text-base font-medium">My Projects </a> / {{$project->title}}
+                <a href="/projects" class="no-underline text-grey text-base font-medium">My Projects </a>
+                / {{$project->title}}
             </h2>
         </div>
     </header>
@@ -16,9 +17,9 @@
                 <h2 class="text-grey font-normal text-lg mb-3">Tasks</h2>
 
                 {{--tasks --}}
-                <div class="bird-card mb-3"> Task 1</div>
-                <div class="bird-card  mb-3"> Task 2</div>
-                <div class="bird-card  mb-3"> Task 3</div>
+                @foreach($project->tasks as $task)
+                    <div class="bird-card mb-3"> {{$task->body}}</div>
+                @endforeach
 
             </div>
 
