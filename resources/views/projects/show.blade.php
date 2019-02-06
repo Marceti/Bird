@@ -2,18 +2,41 @@
 
 @section('content')
 
-
-    <div class="card bg-light mb-3">
-        <h5 class="card-header">{{$project->title}}</h5>
-        <div class="card-body d-flex flex-column  mx-md-0 px-md-0 pb-0">
-            <div class="container pt-2">
-                <h5 class="card-title">Description :</h5>
-                <p class="card-text">{{$project->description}}</p>
-                <hr class="mb-3">
-            </div>
-            <p class="py-0 ml-auto pr-3"><a class="text-decoration-none" href="#"> {{$project->owner->name}} </a> posted {{$project->created_at->diffForHumans()}}</p>
+    <header class="flex items-center mb-4 mx-1" >
+        <div class="flex justify-between  items-end w-full">
+            <h2 class="text-grey text-base font-medium">
+                <a href="/projects" class="no-underline text-grey text-base font-medium">My Projects </a> / {{$project->title}}
+            </h2>
         </div>
-    </div>
+    </header>
 
-    <a class="text-decoration-none" href="{{url()->previous()}}">back</a>
+    <main class="lg:flex -mx-3 mb-6">
+        <div class="max-h-screen h-auto lg:w-3/4 px-3">{{--Left--}}
+            <div class="mb-6">
+                <h2 class="text-grey font-normal text-lg mb-3">Tasks</h2>
+
+                {{--tasks --}}
+                <div class="bird-card mb-3"> Task 1</div>
+                <div class="bird-card  mb-3"> Task 2</div>
+                <div class="bird-card  mb-3"> Task 3</div>
+
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-grey font-normal text-lg mb-3">General Notes</h2>
+
+                <textarea class="bird-card w-full" style="min-height: 200px">Lorem Ipsum.</textarea>
+            </div>
+
+
+        </div>
+
+        <div class="lg:w-1/4 px-3">{{--Right--}}
+
+            @include('projects.partials._projectShowCard')
+
+        </div>
+
+    </main>
+
 @endsection

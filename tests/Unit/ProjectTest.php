@@ -33,4 +33,6 @@ class ProjectTest extends TestCase {
         $this->assertInstanceOf(Model::class,$project->owner);
         $this->assertEquals($project->owner->id,$user->id);
     }
+
+
 }

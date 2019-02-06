@@ -14,12 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+/* Project */
 Route::get('/projects/create','ProjectController@create');
 Route::get('/projects','ProjectController@index')->name('projects');
 Route::post('/projects','ProjectController@store');
 Route::get('/projects/{project}','ProjectController@show');
 
+/* Project/Task */
+Route::post('/projects/{project}/{tasks}','ProjectTasksController@store');
 
 
 
@@ -28,4 +30,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//TODO: Formatarea cardurilor e gata , Am, de facut [projects.show] - episode 11 min:2:00 , repeta talewind:settings (pot scimba culori) :add components (ex bird-card, bird-button) - astea le-am facut eu
