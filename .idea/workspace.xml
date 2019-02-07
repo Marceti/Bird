@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fb357c4c-a5df-4c69-a4b4-c889ad2023e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
       <change beforePath="$PROJECT_DIR$/app/Task.php" afterPath="$PROJECT_DIR$/app/Task.php" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ProjectFactory.php" afterPath="$PROJECT_DIR$/database/factories/ProjectFactory.php" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TaskFactory.php" afterPath="$PROJECT_DIR$/database/factories/TaskFactory.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php" afterPath="$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/projects/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php" afterPath="$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -133,6 +127,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="456">
+                  <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -167,11 +171,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Task.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Task.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Task.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                <state relative-caret-position="240">
+                  <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -204,7 +208,6 @@
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/tests/Unit/UserTest.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ProjectsTest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/create.blade.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
@@ -222,7 +225,6 @@
         <option value="$PROJECT_DIR$/tests/Unit/ProjectTest.php" />
         <option value="$PROJECT_DIR$/resources/sass/_tailwind.scss" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Task.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php" />
@@ -230,6 +232,8 @@
         <option value="$PROJECT_DIR$/database/factories/ProjectFactory.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php" />
         <option value="$PROJECT_DIR$/tests/Unit/TaskTest.php" />
+        <option value="$PROJECT_DIR$/app/Task.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
       </list>
     </option>
   </component>
@@ -491,12 +495,12 @@
       <workItem from="1549283885821" duration="3677000" />
       <workItem from="1549449342772" duration="7698000" />
       <workItem from="1549457488302" duration="8037000" />
-      <workItem from="1549540087430" duration="11624000" />
+      <workItem from="1549540087430" duration="15264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103613000" />
+    <option name="totallyTimeSpent" value="107253000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -651,13 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -855,14 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -929,8 +918,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Task.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="240">
+          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
