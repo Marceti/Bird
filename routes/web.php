@@ -21,7 +21,7 @@ Route::post('/projects','ProjectController@store');
 Route::get('/projects/{project}','ProjectController@show');
 
 /* Project/Task */
-Route::post('/projects/{project}/{tasks}','ProjectTasksController@store');
+Route::post('/projects/{project}/tasks','ProjectTasksController@store');
 
 
 
