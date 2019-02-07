@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fb357c4c-a5df-4c69-a4b4-c889ad2023e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/action_set_name" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/action_set_name" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_tailwind.scss" afterPath="$PROJECT_DIR$/resources/sass/_tailwind.scss" />
+      <change beforePath="$PROJECT_DIR$/app/Task.php" afterPath="$PROJECT_DIR$/app/Task.php" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ProjectFactory.php" afterPath="$PROJECT_DIR$/database/factories/ProjectFactory.php" />
+      <change beforePath="$PROJECT_DIR$/database/factories/TaskFactory.php" afterPath="$PROJECT_DIR$/database/factories/TaskFactory.php" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php" afterPath="$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php" />
       <change beforePath="$PROJECT_DIR$/resources/views/projects/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php" afterPath="$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php" />
@@ -30,8 +32,8 @@
           <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/web.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="552">
-                  <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                <state relative-caret-position="0">
+                  <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -49,13 +51,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ProjectTasksTest.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ProjectTasksTest.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="57" column="14" lean-forward="false" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+                <state relative-caret-position="732">
+                  <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
                   <folding>
-                    <element signature="e#33#52#0#PHP" expanded="true" />
+                    <element signature="e#33#49#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TaskTest.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/tests/Unit/TaskTest.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="396">
+                  <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+                  <folding>
+                    <element signature="e#30#46#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -64,9 +78,11 @@
           <file leaf-file-name="ProjectTest.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/Unit/ProjectTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1056">
-                  <caret line="47" column="73" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="47" selection-end-column="73" />
-                  <folding />
+                <state relative-caret-position="768">
+                  <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#30#69#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -88,8 +104,8 @@
           <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/web.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+                <state relative-caret-position="360">
+                  <caret line="24" column="71" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="71" />
                   <folding />
                 </state>
               </provider>
@@ -98,8 +114,8 @@
           <file leaf-file-name="ProjectTasksController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="384">
-                  <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+                <state relative-caret-position="540">
+                  <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
                   <folding>
                     <element signature="e#40#56#0#PHP" expanded="true" />
                   </folding>
@@ -121,55 +137,42 @@
             <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="468">
-                  <caret line="29" column="85" lean-forward="false" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+                  <caret line="27" column="84" lean-forward="false" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
                   <folding>
-                    <marker date="1549543748845" expanded="true" signature="9:25" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="37:46" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="342:357" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="677:701" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="755:766" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="900:916" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="900:925" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="956:968" ph="..." />
-                    <marker date="1549543748845" expanded="true" signature="1454:1490" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="9:25" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="37:46" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="342:357" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="677:701" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="807:820" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="895:902" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="1029:1064" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="1077:1088" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="1180:1213" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="1467:1483" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="1467:1492" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="1523:1535" ph="..." />
+                    <marker date="1549550010912" expanded="true" signature="2021:2057" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/projects/index.blade.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="504">
-                  <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-                  <folding>
-                    <marker date="1549453632967" expanded="true" signature="9:25" ph="..." />
-                    <marker date="1549453632967" expanded="true" signature="37:46" ph="..." />
-                    <marker date="1549453632967" expanded="true" signature="396:417" ph="..." />
-                    <marker date="1549453632967" expanded="true" signature="504:541" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_tailwind.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_tailwind.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/sass/_tailwind.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+                <state relative-caret-position="468">
+                  <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_projectIndexCard.blade.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/views/projects/partials/_projectIndexCard.blade.php">
+          <file leaf-file-name="Task.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Task.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="5" selection-end-column="10" />
-                  <folding>
-                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                  </folding>
+                <state relative-caret-position="480">
+                  <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -206,7 +209,6 @@
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/database/factories/ProjectFactory.php" />
         <option value="$PROJECT_DIR$/Homestead.yaml" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/_navbar.blade.php" />
@@ -216,16 +218,18 @@
         <option value="$PROJECT_DIR$/tests/Feature/ManageProjectsTest.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/partials/_projectIndexCard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/partials/_projectShowCard.blade.php" />
-        <option value="$PROJECT_DIR$/app/Task.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php" />
         <option value="$PROJECT_DIR$/app/Project.php" />
         <option value="$PROJECT_DIR$/tests/Unit/ProjectTest.php" />
-        <option value="$PROJECT_DIR$/database/factories/TaskFactory.php" />
-        <option value="$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php" />
-        <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/_tailwind.scss" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Task.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/projects/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php" />
+        <option value="$PROJECT_DIR$/database/factories/TaskFactory.php" />
+        <option value="$PROJECT_DIR$/database/factories/ProjectFactory.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php" />
+        <option value="$PROJECT_DIR$/tests/Unit/TaskTest.php" />
       </list>
     </option>
   </component>
@@ -487,12 +491,12 @@
       <workItem from="1549283885821" duration="3677000" />
       <workItem from="1549449342772" duration="7698000" />
       <workItem from="1549457488302" duration="8037000" />
-      <workItem from="1549540087430" duration="4054000" />
+      <workItem from="1549540087430" duration="11624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96043000" />
+    <option name="totallyTimeSpent" value="103613000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -560,14 +564,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/ExampleTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -715,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ProjectFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -780,28 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/ProjectTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="47" column="73" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="47" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Unit/UserTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -817,10 +784,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/TaskFactory.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/projects/partials/_projectIndexCard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="5" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/projects/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1549453632967" expanded="true" signature="9:25" ph="..." />
+            <marker date="1549453632967" expanded="true" signature="37:46" ph="..." />
+            <marker date="1549453632967" expanded="true" signature="396:417" ph="..." />
+            <marker date="1549453632967" expanded="true" signature="504:541" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -834,21 +817,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="57" column="14" lean-forward="false" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-          <folding>
-            <element signature="e#33#52#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="24" column="71" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/resources/sass/_tailwind.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="468">
+          <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="27" column="84" lean-forward="false" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+          <folding>
+            <marker date="1549550010912" expanded="true" signature="9:25" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="37:46" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="342:357" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="677:701" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="807:820" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="895:902" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="1029:1064" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="1077:1088" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="1180:1213" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="1467:1483" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="1467:1492" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="1523:1535" ph="..." />
+            <marker date="1549550010912" expanded="true" signature="2021:2057" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -862,59 +865,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectTasksController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/projects/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_06_150508_create_tasks_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="29" column="85" lean-forward="false" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+        <state relative-caret-position="480">
+          <caret line="22" column="57" lean-forward="false" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/TaskFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ProjectFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
-            <marker date="1549543748845" expanded="true" signature="9:25" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="37:46" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="342:357" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="677:701" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="755:766" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="900:916" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="900:925" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="956:968" ph="..." />
-            <marker date="1549543748845" expanded="true" signature="1454:1490" ph="..." />
+            <element signature="e#33#49#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/projects/partials/_projectIndexCard.blade.php">
+    <entry file="file://$PROJECT_DIR$/tests/Unit/ProjectTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="5" selection-end-column="10" />
+        <state relative-caret-position="768">
+          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="31" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#30#69#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/projects/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/tests/Unit/TaskTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="396">
+          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
           <folding>
-            <marker date="1549453632967" expanded="true" signature="9:25" ph="..." />
-            <marker date="1549453632967" expanded="true" signature="37:46" ph="..." />
-            <marker date="1549453632967" expanded="true" signature="396:417" ph="..." />
-            <marker date="1549453632967" expanded="true" signature="504:541" ph="..." />
+            <element signature="e#30#46#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_tailwind.scss">
+    <entry file="file://$PROJECT_DIR$/app/Task.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        <state relative-caret-position="480">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -22,8 +22,7 @@ Route::get('/projects/{project}','ProjectController@show');
 
 /* Project/Task */
 Route::post('/projects/{project}/tasks','ProjectTasksController@store');
-
-
+Route::patch('/projects/{project}/tasks/{task}','ProjectTasksController@update');
 
 Auth::routes();
 
