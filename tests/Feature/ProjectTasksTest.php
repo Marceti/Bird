@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Project;
 use App\Task;
+use Tests\setup\ProjectSetup;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -33,8 +34,10 @@ class ProjectTasksTest extends TestCase {
     public function a_task_must_have_a_body()
     {
         //Given
-        $this->signIn();
-        $project = factory('App\Project')->create(['owner_id' => auth()->id()]);
+        $user=$this->signIn();
+
+        $project=app(ProjectSetup::class)->ownedBy($user)->create();
+
         $attributes = factory('App\Task')->raw(['body' => '']);
         //When
 

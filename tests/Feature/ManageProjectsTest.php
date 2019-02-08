@@ -126,7 +126,7 @@ class ManageProjectsTest extends TestCase {
 
         //Given
         $user = factory('App\User')->create();
-        $this->signIn($user);
+        $this->signIn();
 
         $project = factory('App\Project')->create(['owner_id' => auth()->id()]);
 
