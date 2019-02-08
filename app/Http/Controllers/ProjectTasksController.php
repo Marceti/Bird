@@ -16,7 +16,7 @@ class ProjectTasksController extends Controller
             'body'=>'required'
         ]);
 
-        abort_if(auth()->user()->isNot($project->owner),403);
+        $this->authorize('update',$project);
 
 
         $project->addTask(request('body'));
@@ -27,7 +27,7 @@ class ProjectTasksController extends Controller
 
     public function update(Project $project, Task $task)
     {
-        abort_if(auth()->user()->isNot($project->owner),403);
+        $this->authorize('update',$task->project);
 
         request()->validate([
             'body'=>'required',

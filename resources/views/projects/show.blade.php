@@ -13,6 +13,9 @@
 
     <main class="lg:flex -mx-3 mb-6">
         <div class="max-h-screen h-auto lg:w-3/4 px-3">{{--Left--}}
+
+            {{-- TASK Section --}}
+
             <div class="mb-6">
                 <h2 class="text-grey font-normal text-lg mb-3">Tasks</h2>
 
@@ -25,8 +28,10 @@
                             @csrf
                             @method('PATCH')
                             <div class="flex justify-between w-full">
-                                <input class="w-full {{$task->completed ? 'text-grey' : ''}}" value="{{$task->body}}" name="body">
-                                <input type="checkbox" name="completed"  {{$task->completed ? 'checked' : ''}} onchange="this.form.submit()">
+                                <input class="w-full {{$task->completed ? 'text-grey' : ''}}" value="{{$task->body}}"
+                                       name="body">
+                                <input type="checkbox" name="completed"
+                                       {{$task->completed ? 'checked' : ''}} onchange="this.form.submit()">
                             </div>
 
                         </form>
@@ -43,10 +48,25 @@
 
             </div>
 
+            {{-- GENERAL NOTES Section --}}
+
             <div class="mb-6">
                 <h2 class="text-grey font-normal text-lg mb-3">General Notes</h2>
+                <form method="POST" action="{{$project->path()}}">
+                    {{csrf_field()}}
+                    @method('PATCH')
 
-                <textarea class="bird-card w-full" style="min-height: 200px">Lorem Ipsum.</textarea>
+                <textarea
+                        class="bird-card w-full"
+                        name="notes"
+                        placeholder="Anything special that you want to make a note of?"
+                        style="min-height: 200px"
+                >{{$project->notes}}</textarea>
+
+                    <button type="submit" class="bird-button">Save</button>
+
+                </form>
+
             </div>
 
 

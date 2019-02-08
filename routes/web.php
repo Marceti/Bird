@@ -19,6 +19,7 @@ Route::get('/projects/create','ProjectController@create');
 Route::get('/projects','ProjectController@index')->name('projects');
 Route::post('/projects','ProjectController@store');
 Route::get('/projects/{project}','ProjectController@show');
+Route::patch('/projects/{project}','ProjectController@update');
 
 /* Project/Task */
 Route::post('/projects/{project}/tasks','ProjectTasksController@store');
