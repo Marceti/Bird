@@ -8,76 +8,83 @@
                 <a href="/projects" class="no-underline text-grey text-base font-medium">My Projects </a>
                 / {{$project->title}}
             </h2>
+
+            <a href="{{$project->path().'/edit'}}" class="bird-button">Edit Project</a>
         </div>
+
     </header>
 
-    <main class="lg:flex -mx-3 mb-6">
-        <div class="max-h-screen h-auto lg:w-3/4 px-3">{{--Left--}}
+    <main class="flex flex-col">
+        <h2 class="text-grey font-normal text-lg mb-3">Tasks</h2>
+        <div class="lg:flex -mx-3 mb-6">
 
-            {{-- TASK Section --}}
+            <div class="max-h-screen h-auto lg:w-3/4 px-3">{{--Left--}}
 
-            <div class="mb-6">
-                <h2 class="text-grey font-normal text-lg mb-3">Tasks</h2>
+                {{-- TASK Section --}}
 
-                {{--tasks --}}
+                <div class="mb-6">
 
-                @foreach($project->tasks as $task)
+
+                    {{--tasks --}}
+
+                    @foreach($project->tasks as $task)
+
+                        <div class="bird-card mb-3">
+                            <form method="POST" action="{{$task->path()}}">
+                                @csrf
+                                @method('PATCH')
+                                <div class="flex justify-between w-full">
+                                    <input class="w-full {{$task->completed ? 'text-grey' : ''}}"
+                                           value="{{$task->body}}"
+                                           name="body">
+                                    <input type="checkbox" name="completed"
+                                           {{$task->completed ? 'checked' : ''}} onchange="this.form.submit()">
+                                </div>
+
+                            </form>
+                        </div>
+
+                    @endforeach
 
                     <div class="bird-card mb-3">
-                        <form method="POST" action="{{$task->path()}}">
-                            @csrf
-                            @method('PATCH')
-                            <div class="flex justify-between w-full">
-                                <input class="w-full {{$task->completed ? 'text-grey' : ''}}" value="{{$task->body}}"
-                                       name="body">
-                                <input type="checkbox" name="completed"
-                                       {{$task->completed ? 'checked' : ''}} onchange="this.form.submit()">
-                            </div>
-
+                        <form method="POST" action="{{$project->path().'/tasks'}}">
+                            {{csrf_field()}}
+                            <input class="w-full" placeholder="Add a new task" name="body">
                         </form>
                     </div>
 
-                @endforeach
-
-                <div class="bird-card mb-3">
-                    <form method="POST" action="{{$project->path().'/tasks'}}">
-                        {{csrf_field()}}
-                        <input class="w-full" placeholder="Add a new task" name="body">
-                    </form>
                 </div>
 
+                {{-- GENERAL NOTES Section --}}
+
+                <div class="mb-6">
+                    <h2 class="text-grey font-normal text-lg mb-3">General Notes</h2>
+                    <form method="POST" action="{{$project->path()}}">
+                        {{csrf_field()}}
+                        @method('PATCH')
+
+                        <textarea
+                                class="bird-card w-full"
+                                name="notes"
+                                placeholder="Anything special that you want to make a note of?"
+                                style="min-height: 200px"
+                        >{{$project->notes}}</textarea>
+
+                        <button type="submit" class="bird-button">Save</button>
+
+                    </form>
+
+                </div>
+
+
             </div>
 
-            {{-- GENERAL NOTES Section --}}
+            <div class="lg:w-1/4 px-3">{{--Right--}}
 
-            <div class="mb-6">
-                <h2 class="text-grey font-normal text-lg mb-3">General Notes</h2>
-                <form method="POST" action="{{$project->path()}}">
-                    {{csrf_field()}}
-                    @method('PATCH')
-
-                <textarea
-                        class="bird-card w-full"
-                        name="notes"
-                        placeholder="Anything special that you want to make a note of?"
-                        style="min-height: 200px"
-                >{{$project->notes}}</textarea>
-
-                    <button type="submit" class="bird-button">Save</button>
-
-                </form>
+                @include('projects.partials._projectShowCard')
 
             </div>
-
-
         </div>
-
-        <div class="lg:w-1/4 px-3">{{--Right--}}
-
-            @include('projects.partials._projectShowCard')
-
-        </div>
-
     </main>
 
 @endsection

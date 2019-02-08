@@ -25,6 +25,8 @@ class ProjectTasksController extends Controller
 
     }
 
+
+
     public function update(Project $project, Task $task)
     {
         $this->authorize('update',$task->project);

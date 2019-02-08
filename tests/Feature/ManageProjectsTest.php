@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Project;
+use Tests\setup\ProjectSetup;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -10,6 +11,23 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class ManageProjectsTest extends TestCase {
 
     use WithFaker, RefreshDatabase;
+
+
+    /** @test */
+    public function guests_cannot_manage_projects()
+    {
+        //Given
+        $project = factory(Project::class)->create();
+
+        //When //Then
+
+        $this->get('/projects')->assertRedirect('login');           /** INDEX */
+        $this->get('/projects/create')->assertRedirect('login');    /** CREATE FORM */
+        $this->get('/projects/edit')->assertRedirect('login');      /** EDIT FORM */
+        $this->get($project->path())->assertRedirect('login');          /** SHOW */
+        $this->post('/projects')->assertRedirect('login');          /** CREATE */
+    }
+
 
     /** --------------VALIDATION-------------- */
     /** @test */
@@ -196,38 +214,83 @@ class ManageProjectsTest extends TestCase {
         //Then
         $response->assertRedirect('/login');
     }
-    
+
     /** ------------------------UPDATE-------------------------- */
 
- /** @test */
+    /** @test */
     public function authenticated_user_can_update_a_project()
     {
         $this->withoutExceptionHandling();
         //Given
         $this->signIn();
-        $project = factory('App\Project')->create(['owner_id'=>auth()->id()]);
+        $project = factory('App\Project')->create(['owner_id' => auth()->id()]);
 
         //When
-        $response = $this->patch($project->path(),['notes'=>'some notes 123']);
+        $response = $this->patch($project->path(), [
+            'title'       => 'title33',
+            'description' => 'desc5',
+            'notes'       => 'some notes 123'
+        ]);
 
         //Then
         $response->assertRedirect($project->path());
-        $this->assertDatabaseHas('projects',['notes'=>'some notes 123']);
+
+        $this->assertDatabaseHas('projects', [
+            'title'       => 'title33',
+            'description' => 'desc5',
+            'notes'       => 'some notes 123'
+        ]);
 
     }
 
     /** @test */
     public function authenticated_user_cannot_update_others_projects()
     {
+
         //Given
         $this->signIn();
         $project = factory('App\Project')->create();
 
         //When
-        $response = $this->patch($project->path(),['notes'=>'some notes 123']);
+        $response = $this->patch($project->path(), [
+            'title'       => 'title33',
+            'description' => 'desc5',
+            'notes'       => 'some notes 123'
+        ]);
 
         //Then
         $response->assertStatus(403);
+
+    }
+
+    /** -----------------------------EDIT----------------------------- */
+
+     /** @test */
+         public function authenticated_user_can_load_editForm_page_for_owned_project()
+         {
+             $this->withoutExceptionHandling();
+           $project=app(ProjectSetup::class)->ownedBy($this->signIn())->create();
+
+           //When
+           $repsonse = $this->get($project->path().'/edit');
+
+           //Then
+
+             $repsonse->assertStatus(200);
+             $repsonse->assertOk();
+         }
+
+    /** @test */
+    public function authenticated_user_cannot_load_editForm_page_for_others_project()
+    {
+        $this->withoutExceptionHandling();
+      $this->signIn();
+        $project = factory('App\Project')->create();
+
+        //When
+        $this->expectException('Illuminate\Auth\Access\AuthorizationException');
+        $repsonse = $this->get($project->path().'/edit');
+
 
     }
 }

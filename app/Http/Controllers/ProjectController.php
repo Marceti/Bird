@@ -22,12 +22,18 @@ class ProjectController extends Controller {
     }
 
 
+    public function create()
+    {
+        return view('projects.create');
+    }
+
+
     public function store()
     {
         //validate
         $attributes = request()->validate([
-            'title'       => 'required',
-            'description' => 'required',
+            'title'       => 'required|min:3',
+            'description' => 'required|min:3',
             'notes'       => 'max:255'
         ]);
 
@@ -38,28 +44,40 @@ class ProjectController extends Controller {
         return redirect()->route('projects');
     }
 
+
+    public function edit(Project $project)
+    {
+        $this->authorize('update',$project);
+        return view('projects.edit',compact('project'));
+    }
+    
+    
+    
+
     public function show(Project $project)
     {
-       $this->authorize('view',$project);
+        $this->authorize('view',$project);
 
         return view('projects.show', compact('project'));
     }
 
-    public function create()
-    {
-        return view('projects.create');
-    }
+
+
 
     public function update(Project $project)
     {
-        //todo:validate
-
+        //validate
+        $attributes = request()->validate([
+            'title'       => 'required|min:3',
+            'description' => 'required|min:3',
+            'notes'       => 'max:255'
+        ]);
 
         //authenticate
         $this->authorize('update',$project);
 
         //persist
-        $project->update(['notes' => request('notes')]);
+        $project->update($attributes);
 
         //redirect
         return redirect($project->path());
