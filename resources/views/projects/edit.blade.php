@@ -43,6 +43,6 @@
         </div>
 
     </form>
-        @include('layouts.partials._errors')
+
     </main>
 @endsection

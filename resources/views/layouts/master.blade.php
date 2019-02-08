@@ -28,6 +28,7 @@
     <main class="p-4 mx-auto bg-grey-lighter" >
         @yield('content')
     </main>
+        @include('layouts.partials._errors')
 </div>
 </body>
 </html>
