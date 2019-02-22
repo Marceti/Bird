@@ -19,4 +19,6 @@ class UserTest extends TestCase {
         //Then
            $this->assertInstanceOf(Collection::class,$user->projects);
     }
+
+
 }
