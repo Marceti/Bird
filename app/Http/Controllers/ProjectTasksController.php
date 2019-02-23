@@ -6,17 +6,16 @@ use App\Project;
 use App\Task;
 use Illuminate\Http\Request;
 
-class ProjectTasksController extends Controller
-{
+class ProjectTasksController extends Controller {
 
     public function store(Project $project)
     {
 
         request()->validate([
-            'body'=>'required'
+            'body' => 'required'
         ]);
 
-        $this->authorize('update',$project);
+        $this->authorize('update', $project);
 
 
         $project->addTask(request('body'));
@@ -26,19 +25,27 @@ class ProjectTasksController extends Controller
     }
 
 
-
     public function update(Project $project, Task $task)
     {
-        $this->authorize('update',$task->project);
+        $this->authorize('update', $task->project);
 
-        request()->validate([
-            'body'=>'required',
+        $validated=request()->validate([
+            'body' => 'required',
         ]);
 
-        $task->update([
-            'body'=>request('body'),
-            'completed'=> request()->has('completed')
-        ]);
+        $task->update($validated);
+
+        if (request()->has('completed'))
+        {
+            $task->complete();
+        }
+        else
+        {
+            $task->incomplete();
+        }
+
         return redirect($project->path());
     }
+
+
 }

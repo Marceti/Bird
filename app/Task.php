@@ -10,6 +10,8 @@ class Task extends Model
 
     protected $touches=['project'];
 
+    protected $casts=['completed'=>'boolean'];
+
     public function project()
     {
         return $this->belongsTo(Project::class);
@@ -18,5 +20,21 @@ class Task extends Model
     public function path()
     {
         return $this->project->path().'/tasks/'.$this->id;
+    }
+
+    /**
+     * Set the task to complete
+     */
+    public function complete()
+    {
+        $this->update(['completed'=>true]);
+    }
+
+    /**
+     *Set the task to incomplete
+     */
+    public function incomplete()
+    {
+        $this->update(['completed'=>false]);
     }
 }

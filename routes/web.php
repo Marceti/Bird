@@ -31,7 +31,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//TODO ActivityFeed 1: Proiectele pot crea activitate
-//TODO ActivityFeed 2: Am de facut Task-urile proiectului pot crea activitate : When Created, Updated, Completed, Incompleted, Deleted
-//TODO ActivityFeed 3: Creaza un observer pentru Task-uri , inregistreaza-l
-//TODO ActivityFeed 4: Creaza doua metode in Task : Completed() si Incompleted()
+

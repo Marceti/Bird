@@ -20,7 +20,7 @@ class Project extends Model {
 
     public function addTask($body)
     {
-        return $this->tasks()->create(compact('body'));
+        return $this->tasks()->create(['body'=>$body, 'completed'=>false]);
     }
 
     public function tasks()

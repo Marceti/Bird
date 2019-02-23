@@ -70,8 +70,8 @@ class ProjectTest extends TestCase {
         $project->recordActivity('test');
 
         //Then
-        $this->assertCount(1, $project->activity);
-        $this->assertEquals('test', $project->activity()->first()->description);
+        $this->assertCount(2, $project->activity);
+        $this->assertEquals('test', $project->activity->last()->description);
 
     }
 }
