@@ -83,6 +83,8 @@
 
                 @include('projects.partials._projectShowCard')
 
+                @include('projects.partials._activity')
+
             </div>
         </div>
     </main>
