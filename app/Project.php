@@ -33,12 +33,8 @@ class Project extends Model {
         return $this->hasMany('App\Activity')->latest();
     }
 
-
     public function recordActivity($description)
     {
-       Activity::create([
-           'project_id'=>$this->id,
-           'description'=>$description
-       ]);
+       $this->activity()->create(compact('description'));
     }
 }

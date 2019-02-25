@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Task;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -47,6 +48,9 @@ class RecordActivityTest extends TestCase {
         //Then
         $this->assertCount(2, $project->activity);
         $this->assertEquals('created_task', $project->activity->last()->description);
+        $this->assertInstanceOf(Task::class, $project->activity->last()->subject);
+
+
     }
 
     /** @test */
@@ -71,6 +75,7 @@ class RecordActivityTest extends TestCase {
 
         $this->assertCount(3, $project->activity);
         $this->assertEquals('completed_task', $project->activity->last()->description);
+        $this->assertInstanceOf(Task::class, $project->activity->last()->subject);
     }
 
     /** @test */
@@ -90,11 +95,13 @@ class RecordActivityTest extends TestCase {
         $this->patch($task->path(), ['body' => $task->body, 'completed' => true]);
         $this->patch($task->path(), ['body' => $task->body]);
 
+
         //Then
 
         $this->assertFalse($task->fresh()->completed);
         $this->assertCount(4, $project->activity);
         $this->assertEquals('incompleted_task', $project->activity->last()->description);
+        $this->assertInstanceOf(Task::class, $project->activity->last()->subject);
     }
 
 
