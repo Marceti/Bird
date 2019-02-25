@@ -23,6 +23,16 @@ class RecordActivityTest extends TestCase {
     }
 
     /** @test */
+    public function creating_a_project_has_no_changes()
+    {
+        //Given
+        $project = factory('App\Project')->create();
+
+        //Then
+        $this->assertNull($project->activity->last()->changes);
+    }
+
+    /** @test */
     public function updating_a_project()
     {
         //Given
@@ -34,7 +44,66 @@ class RecordActivityTest extends TestCase {
         //Then
         $this->assertCount(2, $project->activity);
         $this->assertEquals('updated_project', $project->activity->last()->description);
+
     }
+
+    /** @test */
+    public function updating_a_project_records_changes_on_field()
+    {
+        //Given
+        $project = factory('App\Project')->create([
+            'title' =>'Initial Title',
+            'description'=>'some description',
+        ]);
+
+        //When
+        $project->update(['description' => 'updated']);
+
+        //Then
+
+        $changes=[
+            'before'=>[
+                'description'=>'some description'
+            ],
+            'after'=>[
+                'description' => 'updated'
+            ],
+        ];
+
+        $this->assertEquals($changes, $project->activity->last()->changes);
+    }
+
+    /** @test */
+    public function updating_a_project_records_changes_on_all_fields()
+    {
+        //Given
+        $project = factory('App\Project')->create([
+            'title' =>'Initial Title',
+            'description'=>'some description',
+        ]);
+
+        //When
+        $project->update([
+            'title' =>'Modified Title',
+            'description' => 'updated'
+        ]);
+
+        //Then
+
+        $changes=[
+            'before'=>[
+                'title' =>'Initial Title',
+                'description'=>'some description',
+            ],
+            'after'=>[
+                'title' =>'Modified Title',
+                'description' => 'updated'
+            ],
+        ];
+
+        $this->assertEquals($changes, $project->activity->last()->changes);
+    }
+
 
     /** @test */
     public function creating_a_task()

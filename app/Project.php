@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model {
 
     protected $guarded = [];
+    public $old = [];
 
     public function path()
     {
@@ -20,7 +21,7 @@ class Project extends Model {
 
     public function addTask($body)
     {
-        return $this->tasks()->create(['body'=>$body, 'completed'=>false]);
+        return $this->tasks()->create(['body' => $body, 'completed' => false]);
     }
 
     public function tasks()
@@ -35,6 +36,29 @@ class Project extends Model {
 
     public function recordActivity($description)
     {
-       $this->activity()->create(compact('description'));
+        $this->activity()->create([
+            'description' => $description,
+            'changes'     => $this->ActivityChanges($description)
+        ]);
+    }
+
+    /**
+     * @param $description
+     * @return array
+     */
+    private function ActivityChanges($description)
+    {
+        if ($description === 'created_project')
+        {
+            return null;
+        }
+        else
+        {
+            return [
+                'before' => array_diff($this->old, $this->getAttributes()),
+                'after'  => array_diff($this->getAttributes(), $this->old),
+            ];
+        }
+
     }
 }
