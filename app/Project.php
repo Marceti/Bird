@@ -48,15 +48,10 @@ class Project extends Model {
      */
     private function ActivityChanges($description)
     {
-        if ($description === 'created_project')
-        {
-            return null;
-        }
-        else
-        {
+        if ($this->wasChanged()){
             return [
-                'before' => array_diff($this->old, $this->getAttributes()),
-                'after'  => array_diff($this->getAttributes(), $this->old),
+                'before' => array_except(array_diff($this->old, $this->getAttributes()),'updated_at'),
+                'after'  => array_except(array_diff($this->getAttributes(), $this->old),'updated_at'),
             ];
         }
 

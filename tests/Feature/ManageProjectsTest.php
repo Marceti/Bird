@@ -21,11 +21,16 @@ class ManageProjectsTest extends TestCase {
 
         //When //Then
 
-        $this->get('/projects')->assertRedirect('login');           /** INDEX */
-        $this->get('/projects/create')->assertRedirect('login');    /** CREATE FORM */
-        $this->get('/projects/edit')->assertRedirect('login');      /** EDIT FORM */
-        $this->get($project->path())->assertRedirect('login');          /** SHOW */
-        $this->post('/projects')->assertRedirect('login');          /** CREATE */
+        $this->get('/projects')->assertRedirect('login');
+        /** INDEX */
+        $this->get('/projects/create')->assertRedirect('login');
+        /** CREATE FORM */
+        $this->get('/projects/edit')->assertRedirect('login');
+        /** EDIT FORM */
+        $this->get($project->path())->assertRedirect('login');
+        /** SHOW */
+        $this->post('/projects')->assertRedirect('login');
+        /** CREATE */
     }
 
 
@@ -265,32 +270,77 @@ class ManageProjectsTest extends TestCase {
 
     /** -----------------------------EDIT----------------------------- */
 
-     /** @test */
-         public function authenticated_user_can_load_editForm_page_for_owned_project()
-         {
-             $this->withoutExceptionHandling();
-           $project=app(ProjectSetup::class)->ownedBy($this->signIn())->create();
+    /** @test */
+    public function authenticated_user_can_load_editForm_page_for_owned_project()
+    {
+        $this->withoutExceptionHandling();
+        $project = app(ProjectSetup::class)->ownedBy($this->signIn())->create();
 
-           //When
-           $repsonse = $this->get($project->path().'/edit');
+        //When
+        $repsonse = $this->get($project->path() . '/edit');
 
-           //Then
+        //Then
 
-             $repsonse->assertStatus(200);
-             $repsonse->assertOk();
-         }
+        $repsonse->assertStatus(200);
+        $repsonse->assertOk();
+    }
 
     /** @test */
     public function authenticated_user_cannot_load_editForm_page_for_others_project()
     {
         $this->withoutExceptionHandling();
-      $this->signIn();
+        $this->signIn();
         $project = factory('App\Project')->create();
 
         //When
         $this->expectException('Illuminate\Auth\Access\AuthorizationException');
-        $repsonse = $this->get($project->path().'/edit');
+        $repsonse = $this->get($project->path() . '/edit');
 
 
     }
+
+    /** @test */
+    public function owner_can_delete_a_project()
+    {
+        $this->withoutExceptionHandling();
+        //Given
+        $user = factory('App\User')->create();
+        $this->actingAs($user);
+        $project = factory('App\Project')->create(['owner_id' => $user->id]);
+
+        $this->assertDatabaseHas('projects', $project->toArray());
+        //When
+        $response = $this->delete($project->path());
+
+        //Then
+        $this->assertDatabaseMissing('projects', $project->toArray());
+        $response->assertRedirect(route('projects'));
+    }
+
+    /** @test */
+    public function authenticated_user_cannot_delete_others_project()
+    {
+        // $this->withoutExceptionHandling();
+
+        //Given
+        $project = factory('App\Project')->create();
+
+        //When
+        $this->assertDatabaseHas('projects', $project->toArray());
+        $response = $this->delete($project->path());
+
+        //Then
+        $response->assertRedirect(route('login'));
+
+        //When
+        $this->actingAs(factory('App\User')->create());
+        $response = $this->delete($project->path());
+
+        //Then
+        //  $this->expectException('Illuminate\Auth\Access\AuthorizationException');
+        $response->assertStatus(403);
+
+    }
+
+
 }

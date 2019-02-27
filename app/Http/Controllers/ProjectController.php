@@ -47,21 +47,18 @@ class ProjectController extends Controller {
 
     public function edit(Project $project)
     {
-        $this->authorize('update',$project);
-        return view('projects.edit',compact('project'));
+        $this->authorize('update', $project);
+
+        return view('projects.edit', compact('project'));
     }
-    
-    
-    
+
 
     public function show(Project $project)
     {
-        $this->authorize('view',$project);
+        $this->authorize('view', $project);
 
         return view('projects.show', compact('project'));
     }
-
-
 
 
     public function update(Project $project)
@@ -74,7 +71,7 @@ class ProjectController extends Controller {
         ]);
 
         //authenticate
-        $this->authorize('update',$project);
+        $this->authorize('update', $project);
 
         //persist
         $project->update($attributes);
@@ -83,6 +80,16 @@ class ProjectController extends Controller {
         return redirect($project->path());
     }
 
+
+    public function destroy(Project $project)
+    {
+        //authenticate
+        $this->authorize('delete', $project);
+        //persist
+        $project->delete();
+        //redirect
+        return redirect(route('projects'));
+    }
 
 
 }

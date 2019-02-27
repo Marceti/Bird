@@ -22,6 +22,7 @@ Route::get('/projects/{project}','ProjectController@show');
 Route::get('/projects/{project}/edit','ProjectController@edit');
 Route::patch('/projects/{project}','ProjectController@update');
 
+Route::delete('/projects/{project}','ProjectController@destroy');
 /* Project/Task */
 Route::post('/projects/{project}/tasks','ProjectTasksController@store');
 Route::patch('/projects/{project}/tasks/{task}','ProjectTasksController@update');
