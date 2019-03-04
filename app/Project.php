@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model {
-
+class Project extends Model
+{
     protected $guarded = [];
     public $old = [];
 
     public function path()
     {
-        return "/projects/" . $this->id;
+        return '/projects/'.$this->id;
     }
 
     public function owner()
@@ -38,7 +38,7 @@ class Project extends Model {
     {
         $this->activity()->create([
             'description' => $description,
-            'changes'     => $this->ActivityChanges($description)
+            'changes'     => $this->ActivityChanges($description),
         ]);
     }
 
@@ -48,12 +48,11 @@ class Project extends Model {
      */
     private function ActivityChanges($description)
     {
-        if ($this->wasChanged()){
+        if ($this->wasChanged()) {
             return [
-                'before' => array_except(array_diff($this->old, $this->getAttributes()),'updated_at'),
-                'after'  => array_except(array_diff($this->getAttributes(), $this->old),'updated_at'),
+                'before' => array_except(array_diff($this->old, $this->getAttributes()), 'updated_at'),
+                'after'  => array_except(array_diff($this->getAttributes(), $this->old), 'updated_at'),
             ];
         }
-
     }
 }

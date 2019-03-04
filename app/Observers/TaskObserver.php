@@ -4,8 +4,8 @@ namespace App\Observers;
 
 use App\Task;
 
-class TaskObserver {
-
+class TaskObserver
+{
     /**
      * Handle the task "created" event.
      *
@@ -14,7 +14,7 @@ class TaskObserver {
      */
     public function created(Task $task)
     {
-        $task->recordActivity("created_task");
+        $task->recordActivity('created_task');
     }
 
     /**
@@ -25,16 +25,11 @@ class TaskObserver {
      */
     public function updated(Task $task)
     {
-            if ($task->fresh()->completed)
-            {
-                $task->recordActivity("completed_task");
-            }
-            else
-            {
-                $task->recordActivity("incompleted_task");
-            }
-
-
+        if ($task->fresh()->completed) {
+            $task->recordActivity('completed_task');
+        } else {
+            $task->recordActivity('incompleted_task');
+        }
     }
 
     /**

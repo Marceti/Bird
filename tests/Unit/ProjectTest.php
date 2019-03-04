@@ -2,14 +2,13 @@
 
 namespace Tests\Unit;
 
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProjectTest extends TestCase {
-
+class ProjectTest extends TestCase
+{
     use RefreshDatabase;
 
     /** @test */
@@ -19,9 +18,8 @@ class ProjectTest extends TestCase {
         $project = factory('App\Project')->create();
 
         //Then
-        $this->assertEquals('/projects/' . $project->id, $project->path());
+        $this->assertEquals('/projects/'.$project->id, $project->path());
     }
-
 
     /** @test */
     public function a_project_belongs_to_an_owner()
@@ -57,7 +55,6 @@ class ProjectTest extends TestCase {
 
         //Then
         $this->assertInstanceOf(Collection::class, $project->activity);
-
     }
 
     /** @test */
@@ -72,6 +69,5 @@ class ProjectTest extends TestCase {
         //Then
         $this->assertCount(2, $project->activity);
         $this->assertEquals('test', $project->activity->last()->description);
-
     }
 }
