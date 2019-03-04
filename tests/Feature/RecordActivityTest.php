@@ -4,11 +4,10 @@ namespace Tests\Feature;
 
 use App\Task;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class RecordActivityTest extends TestCase {
-
+class RecordActivityTest extends TestCase
+{
     use RefreshDatabase;
 
     /** @test */
@@ -44,7 +43,6 @@ class RecordActivityTest extends TestCase {
         //Then
         $this->assertCount(2, $project->activity);
         $this->assertEquals('updated_project', $project->activity->last()->description);
-
     }
 
     /** @test */
@@ -61,12 +59,12 @@ class RecordActivityTest extends TestCase {
 
         //Then
 
-        $changes=[
+        $changes = [
             'before'=>[
-                'description'=>'some description'
+                'description'=>'some description',
             ],
             'after'=>[
-                'description' => 'updated'
+                'description' => 'updated',
             ],
         ];
 
@@ -85,25 +83,24 @@ class RecordActivityTest extends TestCase {
         //When
         $project->update([
             'title' =>'Modified Title',
-            'description' => 'updated'
+            'description' => 'updated',
         ]);
 
         //Then
 
-        $changes=[
+        $changes = [
             'before'=>[
                 'title' =>'Initial Title',
                 'description'=>'some description',
             ],
             'after'=>[
                 'title' =>'Modified Title',
-                'description' => 'updated'
+                'description' => 'updated',
             ],
         ];
 
         $this->assertEquals($changes, $project->activity->last()->changes);
     }
-
 
     /** @test */
     public function creating_a_task()
@@ -118,8 +115,6 @@ class RecordActivityTest extends TestCase {
         $this->assertCount(2, $project->activity);
         $this->assertEquals('created_task', $project->activity->last()->description);
         $this->assertInstanceOf(Task::class, $project->activity->last()->subject);
-
-
     }
 
     /** @test */
@@ -131,9 +126,7 @@ class RecordActivityTest extends TestCase {
         //When
         $task = $project->addTask('NewTask');
 
-
         $this->assertFalse($task->completed);
-
 
         $this->actingAs($project->owner);
         $this->patch($task->path(), ['body' => $task->body, 'completed' => true]);
@@ -156,14 +149,11 @@ class RecordActivityTest extends TestCase {
         //When
         $task = $project->addTask('NewTask');
 
-
         $this->assertFalse($task->completed);
-
 
         $this->actingAs($project->owner);
         $this->patch($task->path(), ['body' => $task->body, 'completed' => true]);
         $this->patch($task->path(), ['body' => $task->body]);
-
 
         //Then
 
@@ -172,6 +162,4 @@ class RecordActivityTest extends TestCase {
         $this->assertEquals('incompleted_task', $project->activity->last()->description);
         $this->assertInstanceOf(Task::class, $project->activity->last()->subject);
     }
-
-
 }

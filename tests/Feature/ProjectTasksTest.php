@@ -2,15 +2,14 @@
 
 namespace Tests\Feature;
 
-use App\Project;
 use App\Task;
-use Tests\setup\ProjectSetup;
+use App\Project;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Tests\setup\ProjectSetup;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProjectTasksTest extends TestCase {
-
+class ProjectTasksTest extends TestCase
+{
     use RefreshDatabase;
 
     /** @test */
@@ -22,7 +21,7 @@ class ProjectTasksTest extends TestCase {
         $project = factory('App\Project')->create(['owner_id' => auth()->id()]);
 
         //When
-        $this->post($project->path() . '/tasks', ['body' => 'Lorem ipsum !!!']);
+        $this->post($project->path().'/tasks', ['body' => 'Lorem ipsum !!!']);
 
         //Then
 
@@ -34,19 +33,18 @@ class ProjectTasksTest extends TestCase {
     public function a_task_must_have_a_body()
     {
         //Given
-        $user=$this->signIn();
+        $user = $this->signIn();
 
-        $project=app(ProjectSetup::class)->ownedBy($user)->create();
+        $project = app(ProjectSetup::class)->ownedBy($user)->create();
 
         $attributes = factory('App\Task')->raw(['body' => '']);
         //When
 
-        $response = $this->post($project->path() . '/tasks', $attributes);
+        $response = $this->post($project->path().'/tasks', $attributes);
 
         //Then
 
         $response->assertSessionHasErrors('body');
-
     }
 
     /** @test */
@@ -57,12 +55,11 @@ class ProjectTasksTest extends TestCase {
         $project = factory('App\Project')->create();
 
         //When
-        $response = $this->post($project->path() . '/tasks', ['body' => 'Lorem ipsum !!!']);
+        $response = $this->post($project->path().'/tasks', ['body' => 'Lorem ipsum !!!']);
 
         //Then
         $response->assertStatus(403);
         $this->assertDatabaseMissing('tasks', ['body' => 'Lorem ipsum !!!']);
-
     }
 
     /** @test */
@@ -71,15 +68,14 @@ class ProjectTasksTest extends TestCase {
         //Given
         $this->signIn();
         $project = factory('App\Project')->create();
-        $task=$project->addTask('Test Task 5');
+        $task = $project->addTask('Test Task 5');
 
         //When
-        $response = $this->patch($task->path() , ['body' => 'Test Task 10']);
+        $response = $this->patch($task->path(), ['body' => 'Test Task 10']);
 
         //Then
         $response->assertStatus(403);
         $this->assertDatabaseMissing('tasks', ['body' => 'Test Task 10']);
-
     }
 
     /** @test */
@@ -87,9 +83,9 @@ class ProjectTasksTest extends TestCase {
     {
         $this->withoutExceptionHandling();
         //Given
-            $this->signIn();
-            $project = auth()->user()->projects()->create(factory(Project::class)->raw());
-            $task = $project->addTask('Something');
+        $this->signIn();
+        $project = auth()->user()->projects()->create(factory(Project::class)->raw());
+        $task = $project->addTask('Something');
 
         //When
         $response = $this->patch($task->path(), [
@@ -100,9 +96,7 @@ class ProjectTasksTest extends TestCase {
         //Then
         $response = $this->assertDatabaseHas('tasks', [
             'body'      => 'Something new',
-            'completed' => true
+            'completed' => true,
         ]);
     }
-    
-
 }
