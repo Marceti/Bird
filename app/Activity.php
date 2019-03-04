@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model {
 
+
+
     protected $guarded = [];
     protected $casts = [
         'changes' => 'array'
@@ -14,6 +16,7 @@ class Activity extends Model {
 
     public function subject()
     {
+        $temp ="temp";
         return $this->morphTo();
     }
 }

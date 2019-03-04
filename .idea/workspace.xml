@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb357c4c-a5df-4c69-a4b4-c889ad2023e7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.travis.yml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/action_provision" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/action_provision" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/action_set_name" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/action_set_name" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/box_meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/id" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/id" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/index_uuid" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/index_uuid" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/private_key" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/private_key" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/synced_folders" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/synced_folders" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/vagrant_cwd" afterPath="$PROJECT_DIR$/.vagrant/machines/bird/virtualbox/vagrant_cwd" />
+      <change beforePath="$PROJECT_DIR$/app/Activity.php" afterPath="$PROJECT_DIR$/app/Activity.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -125,8 +117,8 @@
           <file leaf-file-name="ProjectTasksTest.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="852">
-                  <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+                <state relative-caret-position="-217">
+                  <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
                   <folding>
                     <element signature="e#33#49#0#PHP" expanded="true" />
                   </folding>
@@ -151,8 +143,8 @@
           <file leaf-file-name="CevaNotification.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Notifications/CevaNotification.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+                <state relative-caret-position="1296">
+                  <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
                   <folding>
                     <element signature="e#37#66#0#PHP" expanded="true" />
                   </folding>
@@ -180,11 +172,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                <state relative-caret-position="192">
+                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Activity.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Activity.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="552">
+                  <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -248,7 +250,6 @@
         <option value="$PROJECT_DIR$/resources/views/projects/activity/incompleted_task.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/projects/activity/completed_task.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_22_131254_create_activities_table.php" />
-        <option value="$PROJECT_DIR$/app/Activity.php" />
         <option value="$PROJECT_DIR$/app/Observers/ProjectObserver.php" />
         <option value="$PROJECT_DIR$/tests/Feature/RecordActivityTest.php" />
         <option value="$PROJECT_DIR$/app/Project.php" />
@@ -261,6 +262,7 @@
         <option value="$PROJECT_DIR$/app/Notifications/CevaNotification.php" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/.env.travis" />
+        <option value="$PROJECT_DIR$/app/Activity.php" />
       </list>
     </option>
   </component>
@@ -490,7 +492,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179210000" />
+    <option name="totallyTimeSpent" value="179262000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -715,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_22_131254_create_activities_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -865,8 +860,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Notifications/CevaNotification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="1296">
+          <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
           <folding>
             <element signature="e#37#66#0#PHP" expanded="true" />
           </folding>
@@ -901,8 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        <state relative-caret-position="-217">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="e#33#49#0#PHP" expanded="true" />
           </folding>
@@ -919,8 +914,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="192">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
