@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb357c4c-a5df-4c69-a4b4-c889ad2023e7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +30,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4171875">
+    <splitter split-orientation="horizontal" split-proportion="0.34152102">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="ProjectSetup.php" pinned="false" current-in-tab="false">
@@ -119,8 +119,8 @@
           <file leaf-file-name="ProjectTasksTest.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-300">
-                  <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+                <state relative-caret-position="660">
+                  <caret line="98" column="32" lean-forward="true" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -160,12 +160,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Activity.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Activity.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Activity.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                <state relative-caret-position="384">
+                  <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/readme.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="24">
+                    <caret line="1" column="107" lean-forward="false" selection-start-line="1" selection-start-column="107" selection-end-line="1" selection-end-column="107" />
+                    <folding />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -190,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/_navbar.blade.php" />
         <option value="$PROJECT_DIR$/tailwind.js" />
         <option value="$PROJECT_DIR$/resources/views/projects/index.blade.php" />
@@ -241,6 +253,7 @@
         <option value="$PROJECT_DIR$/app/Notifications/CevaNotification.php" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/.env.travis" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -470,7 +483,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179215000" />
+    <option name="totallyTimeSpent" value="179313000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -711,8 +724,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="384">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -892,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/ProjectTasksTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="660">
+          <caret line="98" column="32" lean-forward="true" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
           <folding />
         </state>
       </provider>
