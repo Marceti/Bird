@@ -3,15 +3,14 @@
 namespace Tests\Feature;
 
 use App\Project;
-use Tests\setup\ProjectSetup;
 use Tests\TestCase;
+use Tests\setup\ProjectSetup;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ManageProjectsTest extends TestCase {
-
+class ManageProjectsTest extends TestCase
+{
     use WithFaker, RefreshDatabase;
-
 
     /** @test */
     public function guests_cannot_manage_projects()
@@ -22,19 +21,19 @@ class ManageProjectsTest extends TestCase {
         //When //Then
 
         $this->get('/projects')->assertRedirect('login');
-        /** INDEX */
+        /* INDEX */
         $this->get('/projects/create')->assertRedirect('login');
-        /** CREATE FORM */
+        /* CREATE FORM */
         $this->get('/projects/edit')->assertRedirect('login');
-        /** EDIT FORM */
+        /* EDIT FORM */
         $this->get($project->path())->assertRedirect('login');
-        /** SHOW */
+        /* SHOW */
         $this->post('/projects')->assertRedirect('login');
-        /** CREATE */
+        /* CREATE */
     }
 
-
     /** --------------VALIDATION-------------- */
+
     /** @test */
     public function a_project_must_have_a_title()
     {
@@ -104,10 +103,10 @@ class ManageProjectsTest extends TestCase {
         $this->assertDatabaseHas('projects', $projectData);
         $project = Project::where($projectData)->first();
 
-        /** Verificam daca se vede in index */
+        /* Verificam daca se vede in index */
         $this->get('/projects', $projectData)->assertSee($projectData['title']);
 
-        /** Verificam daca se vede in pagina proiectului */
+        /* Verificam daca se vede in pagina proiectului */
         $this->get($project->path())
             ->assertSee($projectData['title'])
             ->assertSee($projectData['description'])
@@ -193,7 +192,6 @@ class ManageProjectsTest extends TestCase {
         $response->assertStatus(403);
     }
 
-
     /** @test */
     public function a_guest_cannot_view_a_project()
     {
@@ -234,7 +232,7 @@ class ManageProjectsTest extends TestCase {
         $response = $this->patch($project->path(), [
             'title'       => 'title33',
             'description' => 'desc5',
-            'notes'       => 'some notes 123'
+            'notes'       => 'some notes 123',
         ]);
 
         //Then
@@ -243,9 +241,8 @@ class ManageProjectsTest extends TestCase {
         $this->assertDatabaseHas('projects', [
             'title'       => 'title33',
             'description' => 'desc5',
-            'notes'       => 'some notes 123'
+            'notes'       => 'some notes 123',
         ]);
-
     }
 
     /** @test */
@@ -260,12 +257,11 @@ class ManageProjectsTest extends TestCase {
         $response = $this->patch($project->path(), [
             'title'       => 'title33',
             'description' => 'desc5',
-            'notes'       => 'some notes 123'
+            'notes'       => 'some notes 123',
         ]);
 
         //Then
         $response->assertStatus(403);
-
     }
 
     /** -----------------------------EDIT----------------------------- */
@@ -277,7 +273,7 @@ class ManageProjectsTest extends TestCase {
         $project = app(ProjectSetup::class)->ownedBy($this->signIn())->create();
 
         //When
-        $repsonse = $this->get($project->path() . '/edit');
+        $repsonse = $this->get($project->path().'/edit');
 
         //Then
 
@@ -294,9 +290,7 @@ class ManageProjectsTest extends TestCase {
 
         //When
         $this->expectException('Illuminate\Auth\Access\AuthorizationException');
-        $repsonse = $this->get($project->path() . '/edit');
-
-
+        $repsonse = $this->get($project->path().'/edit');
     }
 
     /** @test */
@@ -339,8 +333,5 @@ class ManageProjectsTest extends TestCase {
         //Then
         //  $this->expectException('Illuminate\Auth\Access\AuthorizationException');
         $response->assertStatus(403);
-
     }
-
-
 }

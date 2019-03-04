@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use App\Project;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller {
-
-
+class ProjectController extends Controller
+{
     public function __construct()
     {
         $this->middleware('auth');
     }
-
 
     public function index()
     {
@@ -21,12 +19,10 @@ class ProjectController extends Controller {
         return view('projects.index', compact('projects'));
     }
 
-
     public function create()
     {
         return view('projects.create');
     }
-
 
     public function store()
     {
@@ -34,7 +30,7 @@ class ProjectController extends Controller {
         $attributes = request()->validate([
             'title'       => 'required|min:3',
             'description' => 'required|min:3',
-            'notes'       => 'max:255'
+            'notes'       => 'max:255',
         ]);
 
         //persist
@@ -44,14 +40,12 @@ class ProjectController extends Controller {
         return redirect()->route('projects');
     }
 
-
     public function edit(Project $project)
     {
         $this->authorize('update', $project);
 
         return view('projects.edit', compact('project'));
     }
-
 
     public function show(Project $project)
     {
@@ -60,14 +54,13 @@ class ProjectController extends Controller {
         return view('projects.show', compact('project'));
     }
 
-
     public function update(Project $project)
     {
         //validate
         $attributes = request()->validate([
             'title'       => 'required|min:3',
             'description' => 'required|min:3',
-            'notes'       => 'max:255'
+            'notes'       => 'max:255',
         ]);
 
         //authenticate
@@ -80,7 +73,6 @@ class ProjectController extends Controller {
         return redirect($project->path());
     }
 
-
     public function destroy(Project $project)
     {
         //authenticate
@@ -90,6 +82,4 @@ class ProjectController extends Controller {
         //redirect
         return redirect(route('projects'));
     }
-
-
 }

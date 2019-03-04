@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $guarded=[];
+    protected $guarded = [];
 
-    protected $touches=['project'];
+    protected $touches = ['project'];
 
-    protected $casts=['completed'=>'boolean'];
+    protected $casts = ['completed'=>'boolean'];
 
     public function project()
     {
@@ -23,7 +23,7 @@ class Task extends Model
     }
 
     /**
-     * Set the task to complete
+     * Set the task to complete.
      */
     public function complete()
     {
@@ -31,7 +31,7 @@ class Task extends Model
     }
 
     /**
-     *Set the task to incomplete
+     *Set the task to incomplete.
      */
     public function incomplete()
     {
@@ -40,14 +40,14 @@ class Task extends Model
 
     public function activity()
     {
-        return $this->morphMany('App\Activity','subject')->latest();
+        return $this->morphMany('App\Activity', 'subject')->latest();
     }
 
     public function recordActivity($description)
     {
         $this->activity()->create([
             'description'=>$description,
-            'project_id'=>$this->project->id
+            'project_id'=>$this->project->id,
         ]);
     }
 }
